@@ -7,6 +7,7 @@ https://www.kaggle.com/datasets/tobycrabtree/nfl-scores-and-betting-data?resourc
 
 Also NFL data from the API (https://sportsdata.io/nfl-api) is used. With the free API Version some data is scramled,
 which means, that the data like scores are not the exact results. We want compare them to the real scores from the kaggle data set.
+The free API provides 1,000 API calls per month.
 
 Also the API provides additional informtaion like:
 - Roster and Depth Chart, Team Depth Chart
