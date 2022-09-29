@@ -19,11 +19,11 @@ from database_config import MyDatabase
 
 ##### TRANSFORMATION of Kaggle datasets ####
 
-teams = pd.read_csv('../data/teams.csv')
-teams.head()
+teams = pd.read_csv('Projekte/NFL_Kaggle/data/teams.csv')
+print(teams.head())
 
 # encoding in latin instead of utf-8 because of some signs utf-8 doesn´t work
-stadiums = pd.read_csv('data/stadiums.csv', encoding='latin1')
+stadiums = pd.read_csv('Projekte/NFL_Kaggle/data/stadiums.csv', encoding='latin1')
 # Replacing NaN Values to None which is equal to  NULL in postgres
 stadiums = stadiums.where(pd.notnull(stadiums), None)
 # saving only the necessary stadium rows
@@ -31,14 +31,14 @@ stadiums = stadiums[['stadium_name', 'stadium_location', 'stadium_open', 'stadiu
 'stadium_address', 'stadium_weather_station_code', 'stadium_weather_type', 'stadium_capacity', 'stadium_surface']]
 # replacing the ',' in the column capacity with '', so the column can insert to postgres as integer
 stadiums['stadium_capacity'] = stadiums['stadium_capacity'].str.replace(',','')
-stadiums.head()
+print(stadiums.head())
 
-scores_bets = pd.read_csv('data/scores_bets.csv')
+scores_bets = pd.read_csv('Projekte/NFL_Kaggle/data/scores_bets.csv')
 # changing the dateformat from dd/mm/yyyy to yyyy-mm-dd for postgres insert
 scores_bets['schedule_date'] = pd.to_datetime(scores_bets['schedule_date'])
 # Replacing NaN Values to None which is equal to  NULL in postgres
 scores_bets = scores_bets.where(pd.notnull(scores_bets), None)
-scores_bets.tail()
+print(scores_bets.tail())
 
 
 ##### LOADING the Kaggle datasets to the Postgres database #####
