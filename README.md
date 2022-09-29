@@ -22,6 +22,9 @@ The data is stored in a Postgres database
 Job Orchestration with Airflow
 Deployment with Docker
 
+## Particularities
+The sportsdata.io API 
+
 
 ## Update intervalls
 The data will be updated weekly during the Football season. Because the last game of a Gameweek is on monday, the updates will occur on thursday.
