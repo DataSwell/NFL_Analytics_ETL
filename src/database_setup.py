@@ -28,8 +28,7 @@ create_teams_table = """CREATE TABLE IF NOT EXISTS teams
 """
 
 create_scores_bets_table = """CREATE TABLE IF NOT EXISTS scores_bets 
-    (id SERIAL PRIMARY KEY, 
-    schedule_date date, 
+    (schedule_date date, 
     schedule_season varchar, 
     schedule_week varchar, 
     schedule_playoff bool, 
@@ -47,7 +46,8 @@ create_scores_bets_table = """CREATE TABLE IF NOT EXISTS scores_bets
     weather_humidity numeric, 
     weather_detail varchar, 
     foreign key (team_home) references teams(team_name), 
-    foreign key (team_away) references teams(team_name))
+    foreign key (team_away) references teams(team_name),
+    PRIMARY KEY (schedule_date, team_home, team_away))
 """
 
 db = MyDatabase()
