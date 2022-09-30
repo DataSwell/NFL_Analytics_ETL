@@ -12,6 +12,12 @@ class MyDatabase():
 
         self.conn.set_session(autocommit=True)
 
+    def query_func(self, query, params=None):
+        try:
+            self.cur.execute(query)
+        except psycopg2.Error as e:
+            print(e)
+
     def fetchall(self,query):
         try:
             self.cur.execute(query)
@@ -25,12 +31,6 @@ class MyDatabase():
         except psycopg2.Error as e:
             print(e)
         return self.cur.fetchone()
-
-    def query_func(self, query, params=None):
-        try:
-            self.cur.execute(query)
-        except psycopg2.Error as e:
-            print(e)
 
     def close(self):
         self.cur.close()
