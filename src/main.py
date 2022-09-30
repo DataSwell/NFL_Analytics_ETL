@@ -1,6 +1,7 @@
 import os
 import pandas as pd
 from database_config import MyDatabase
+import psycopg2 
 
 # Testcases for the database connection/class
 # test_query = '''SELECT * from teams;'''
@@ -43,5 +44,86 @@ print(scores_bets.tail())
 
 ##### LOADING the Kaggle datasets to the Postgres database #####
 
-# creating database object from the class MyDatabase
-db = MyDatabase()
+# Connecting to the new database nfl_scores_bets   
+# password for the database from an environment variable
+db_pw = os.environ.get('DB_PASS')
+conn_str = "host=localhost user=postgres dbname=nfl_scores_bets password={}".format(db_pw)
+
+try:
+    conn = psycopg2.connect(f"host=localhost user=postgres dbname=nfl_scores_bets password={db_pw}")
+except psycopg2.Error as e:
+    print('Error: Cnnection to database failed')
+    print(e)
+    
+try:
+    cur = conn.cursor()
+except psycopg2.Error as e:
+    print('Cursor failed')
+    print(e)
+    
+conn.set_session(autocommit=True)
+
+
+stadium_table_insert = ("""INSERT INTO stadiums (
+stadium_name,
+stadium_location,
+stadium_open_year,
+stadium_close_year,
+stadium_type,
+stadium_address, 
+stadium_weather_station_code,
+stadium_weather_type,
+stadium_capacity,
+stadium_surface) 
+VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+""")
+
+teams_table_insert = ("""INSERT INTO teams (
+team_name,
+team_name_short,
+team_id,
+team_id_pfr,
+team_conference,
+team_division,
+team_conference_pre2002,
+team_division_pre2002)
+VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
+""")
+
+scores_bets_table_insert = ("""INSERT INTO scores_bets (
+schedule_date,
+schedule_season,
+schedule_week,
+schedule_playoff,
+team_home,
+score_home,
+score_away,
+team_away,
+team_favorite_id,
+spread_favorite,
+over_under_line,
+stadium_name,
+stadium_neutral,
+weather_temperature,
+weather_wind_mph,
+weather_humidity,
+weather_detail) 
+VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+""")
+
+# works fine, if i create the datbase connection in this script
+# for i, row in scores_bets.iterrows():
+#     cur.execute(scores_bets_table_insert, list(row))
+
+# doesn´t work when I do the insert with the method from the database_config script
+db =MyDatabase()
+for i, row in scores_bets.iterrows():
+    db.query_func(scores_bets_table_insert, list(row))
+
+    
+    
+# for i, row in stadiums.iterrows():
+#     cur.execute(stadium_table_insert, list(row))
+
+# for i, row in teams.iterrows():
+#     cur.execute(teams_table_insert, list(row))
