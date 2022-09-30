@@ -14,7 +14,7 @@ class MyDatabase():
 
     def query_func(self, query, params=None):
         try:
-            self.cur.execute(query)
+            self.cur.execute(query, params)
         except psycopg2.Error as e:
             print(e)
 
