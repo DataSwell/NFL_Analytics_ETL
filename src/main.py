@@ -2,19 +2,26 @@ import os
 import pandas as pd
 from database_config import MyDatabase
 import psycopg2 
-
-# Testcases for the database connection/class
-# test_query = '''SELECT * from teams;'''
-# create_test = '''CREATE TABLE test (ID int, name varchar)'''
-# insert_test = """INSERT INTO teams (team_name, team_id) VALUES ('TestTeam', 'TT')"""
-# delete_test = """DELETE FROM teams WHERE team_id = 'TT';"""
-# drop_test = """DROP TABLE IF EXISTS test"""
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
 
 
+#### archiving old datasets ####
+# moving the old csv files to archiv folder
 
-#### EXTRACTING Kaggle datasets #####
-# moving the old csv files to archiv
-# automized download
+
+#### EXTRACTING Kaggle datasets  with selenium #####
+driver = webdriver.Chrome(executable_path='D:/SeleniumDriver')
+stadiums_url = 'https://www.kaggle.com/datasets/tobycrabtree/nfl-scores-and-betting-data?resource=download&select=nfl_stadiums.csv'
+teams_url = 'https://www.kaggle.com/datasets/tobycrabtree/nfl-scores-and-betting-data?resource=download&select=nfl_teams.csv'
+spread_scores = 'https://www.kaggle.com/datasets/tobycrabtree/nfl-scores-and-betting-data?resource=download&select=spreadspoke_scores.csv'
+dl_button_xpath = '/html/body/main/div[1]/div/div[5]/div[2]/div[5]/div[2]/div[2]/div/div[1]/div/div[1]/div[1]/i'
+
+driver.get(stadiums_url)
+stadiums_btn = driver.find_element_by_xpath
+stadiums_btn
+
+
 # saving the new csv files in the folder data 
 
 
@@ -111,20 +118,13 @@ weather_detail)
 VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
 """)
 
-# 
-
-# works fine, if i create the datbase connection in this script
-# for i, row in scores_bets.iterrows():
-#     cur.execute(scores_bets_table_insert, list(row))
-
-# doesn´t work when I do the insert with the method from the database_config script
-db =MyDatabase()
+# db =MyDatabase()
   
-for i, row in stadiums.iterrows():
-    db.query_func(stadium_table_insert, list(row))
+# for i, row in stadiums.iterrows():
+#     db.query_func(stadium_table_insert, list(row))
 
-for i, row in teams.iterrows():
-    db.query_func(teams_table_insert, list(row))
+# for i, row in teams.iterrows():
+#     db.query_func(teams_table_insert, list(row))
 
-for i, row in scores_bets.iterrows():
-    db.query_func(scores_bets_table_insert, list(row))
+# for i, row in scores_bets.iterrows():
+#     db.query_func(scores_bets_table_insert, list(row))
