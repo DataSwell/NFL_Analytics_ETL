@@ -1,5 +1,9 @@
 from database_config import MyDatabase
 
+# generating the database object
+db = MyDatabase()
+
+
 # Strings for Creating the tables for the content of the Kaggle Dataset
 
 create_stadiums_table = """CREATE TABLE IF NOT EXISTS stadiums 
@@ -50,10 +54,10 @@ create_scores_bets_table = """CREATE TABLE IF NOT EXISTS scores_bets
     PRIMARY KEY (schedule_date, team_home, team_away))
 """
 
-db = MyDatabase()
 db.query_func(create_stadiums_table)
 db.query_func(create_teams_table)
 db.query_func(create_scores_bets_table)
 db.close()
+
 
 # Cretaing the tables for the content of the SportsData-API
