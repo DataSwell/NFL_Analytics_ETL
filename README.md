@@ -1,5 +1,5 @@
 # NFL_Analytics
- Test
+
 For this NFL project different types of data are collected. From Kaggle the "NFL scores and betting" dataset, which
 include the historic game scores und betting odds since 1966.
 
