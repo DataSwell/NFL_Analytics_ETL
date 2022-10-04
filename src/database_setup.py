@@ -6,7 +6,7 @@ db = MyDatabase()
 
 # Strings for Creating the tables for the content of the Kaggle Dataset
 
-create_stadiums_table = """CREATE TABLE IF NOT EXISTS stadiums 
+create_stadiums_table = """CREATE TABLE IF NOT EXISTS kg_stadiums 
     (stadium_name varchar NOT NULL, 
     stadium_location varchar, 
     stadium_open_year int, 
@@ -20,7 +20,7 @@ create_stadiums_table = """CREATE TABLE IF NOT EXISTS stadiums
     PRIMARY KEY (stadium_name))
 """
 
-create_teams_table = """CREATE TABLE IF NOT EXISTS teams 
+create_teams_table = """CREATE TABLE IF NOT EXISTS kg_teams 
     (team_name varchar PRIMARY KEY, 
     team_name_short varchar, 
     team_id varchar NOT NULL, 
@@ -31,7 +31,7 @@ create_teams_table = """CREATE TABLE IF NOT EXISTS teams
     team_division_pre2002 varchar)
 """
 
-create_scores_bets_table = """CREATE TABLE IF NOT EXISTS scores_bets 
+create_scores_bets_table = """CREATE TABLE IF NOT EXISTS kg_scores_bets 
     (schedule_date date, 
     schedule_season varchar, 
     schedule_week varchar, 
@@ -49,8 +49,8 @@ create_scores_bets_table = """CREATE TABLE IF NOT EXISTS scores_bets
     weather_wind_mph numeric, 
     weather_humidity numeric, 
     weather_detail varchar, 
-    foreign key (team_home) references teams(team_name), 
-    foreign key (team_away) references teams(team_name),
+    foreign key (team_home) references kg_teams(team_name), 
+    foreign key (team_away) references kg_teams(team_name),
     PRIMARY KEY (schedule_date, team_home, team_away))
 """
 
