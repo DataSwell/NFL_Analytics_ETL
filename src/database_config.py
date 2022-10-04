@@ -3,7 +3,7 @@ import psycopg2
 
 # password for the database from an environment variable
 db_pw = os.environ.get('DB_PASS')
-conn_str = "host=localhost user=postgres dbname=nfl_scores_bets password={}".format(db_pw)
+conn_str = "host=localhost user=postgres dbname=FootballAnalytics password={}".format(db_pw)
 
 class MyDatabase():
     def __init__(self):
