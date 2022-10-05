@@ -98,13 +98,13 @@ weather_detail)
 VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
 """)
 
-db =MyDatabase()
+db = MyDatabase()
   
-for i, row in stadiums.iterrows():
-    db.query_func(stadium_table_insert, list(row))
+# for i, row in stadiums.iterrows():
+#     db.query_func(stadium_table_insert, list(row))
 
-for i, row in teams.iterrows():
-    db.query_func(teams_table_insert, list(row))
+# for i, row in teams.iterrows():
+#     db.query_func(teams_table_insert, list(row))
 
 for i, row in scores_bets.iterrows():
     db.query_func(scores_bets_table_insert, list(row))
