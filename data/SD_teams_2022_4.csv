@@ -1,0 +1,33 @@
+Key,TeamID,City,Conference,Division,FullName,StadiumID,HeadCoach,OffensiveCoordinator,DefensiveCoordinator,SpecialTeamsCoach,OffensiveScheme,DefensiveScheme
+ARI,1,Arizona,NFC,West,Arizona Cardinals,29,Kliff Kingsbury,Kliff Kingsbury,Vance Joseph,Jeff Rodgers,3WR,3-4
+ATL,2,Atlanta,NFC,South,Atlanta Falcons,45,Arthur Smith,Dave Ragone,Dean Pees,Marquice Williams,3WR,3-4
+BAL,3,Baltimore,AFC,North,Baltimore Ravens,7,John Harbaugh,Greg Roman,Mike Macdonald,Chris Horton,3WR,3-4
+BUF,4,Buffalo,AFC,East,Buffalo Bills,1,Sean McDermott,Ken Dorsey,Leslie Frazier,Matthew Smiley,3WR,4-3
+CAR,5,Carolina,NFC,South,Carolina Panthers,26,Matt Rhule,Ben McAdoo,Phil Snow,Chris Tabor,3WR,4-3
+CHI,6,Chicago,NFC,North,Chicago Bears,20,Matt Eberflus,Luke Getsy,Alan Williams,Richard Hightower,3WR,4-3
+CIN,7,Cincinnati,AFC,North,Cincinnati Bengals,5,Zac Taylor,Brian Callahan,Lou Anarumo,Darrin Simmons,3WR,4-3
+CLE,8,Cleveland,AFC,North,Cleveland Browns,6,Kevin Stefanski,Alex Van Pelt,Joe Woods,Mike Priefer,3WR,4-3
+DAL,9,Dallas,NFC,East,Dallas Cowboys,17,Mike McCarthy,Kellen Moore,Dan Quinn,John Fassel,3WR,4-3
+DEN,10,Denver,AFC,West,Denver Broncos,13,Nathaniel Hackett,Justin Outten,Ejiro Evero,Dwayne Stukes,3WR,3-4
+DET,11,Detroit,NFC,North,Detroit Lions,21,Dan Campbell,Ben Johnson,Aaron Glenn,Dave Fipp,3WR,4-3
+GB,12,Green Bay,NFC,North,Green Bay Packers,22,Matt LaFleur,Adam Stenavich,Joe Barry,Rich Bisaccia,3WR,3-4
+HOU,13,Houston,AFC,South,Houston Texans,11,Lovie Smith,Pep Hamilton,Lovie Smith,Frank Ross,3WR,4-3
+IND,14,Indianapolis,AFC,South,Indianapolis Colts,9,Frank Reich,Marcus Brady,Gus Bradley,Bubba Ventrone,3WR,4-3
+JAX,15,Jacksonville,AFC,South,Jacksonville Jaguars,10,Doug Pederson,Press Taylor,Mike Caldwell,Heath Farwell,3WR,3-4
+KC,16,Kansas City,AFC,West,Kansas City Chiefs,15,Andy Reid,Eric Bieniemy,Steve Spagnuolo,Dave Toub,3WR,4-3
+LAC,29,Los Angeles,AFC,West,Los Angeles Chargers,54,Brandon Staley,Joe Lombardi,Renaldo Hill,Ryan Ficken,3WR,3-4
+LAR,32,Los Angeles,NFC,West,Los Angeles Rams,54,Sean McVay,Liam Coen,Raheem Morris,Joe DeCamillis,3WR,3-4
+LV,25,Las Vegas,AFC,West,Las Vegas Raiders,53,Josh McDaniels,Mick Lombardi,Patrick Graham,Tom McMahon,3WR,3-4
+MIA,19,Miami,AFC,East,Miami Dolphins,2,Mike McDaniel,Frank Smith,Josh Boyer,Danny Crossman,3WR,3-4
+MIN,20,Minnesota,NFC,North,Minnesota Vikings,42,Kevin O'Connell,Wes Phillips,Ed Donatell,Matt Daniels,3WR,3-4
+NE,21,New England,AFC,East,New England Patriots,4,Bill Belichick,,,Cameron Achord,3WR,3-4
+NO,22,New Orleans,NFC,South,New Orleans Saints,27,Dennis Allen,Pete Carmichael,Ryan Nielsen & Kris Richard,Darren Rizzi,3WR,4-3
+NYG,23,New York,NFC,East,New York Giants,3,Brain Daboll,Mike Kafka,Don Martindale,Thomas McGaughey,3WR,3-4
+NYJ,24,New York,AFC,East,New York Jets,3,Robert Saleh,Mike LaFleur,Jeff Ulbrich,Brant Boyer,3WR,4-3
+PHI,26,Philadelphia,NFC,East,Philadelphia Eagles,18,Nick Sirianni,Shane Steichen,Jonathan Gannon,Michael Clay,3WR,4-3
+PIT,28,Pittsburgh,AFC,North,Pittsburgh Steelers,8,Mike Tomlin,Matt Canada,Teryl Austin,Danny Smith,3WR,3-4
+SEA,30,Seattle,NFC,West,Seattle Seahawks,31,Pete Carroll,Shane Waldron,Clint Hurtt,Larry Izzo,3WR,4-3
+SF,31,San Francisco,NFC,West,San Francisco 49ers,37,Kyle Shanahan,,DeMeco Ryans,Brian Schneider,3WR,4-3
+TB,33,Tampa Bay,NFC,South,Tampa Bay Buccaneers,24,Todd Bowles,Byron Leftwich,Kacy Rodgers & Larry Foote,Keith Armstrong,3WR,3-4
+TEN,34,Tennessee,AFC,South,Tennessee Titans,12,Mike Vrabel,Todd Downing,Shane Bowen,Craig Aukerman,3WR,3-4
+WAS,35,Washington,NFC,East,Washington Commanders,19,Ron Rivera,Scott Turner,Jack Del Rio,Nate Kaczor,3WR,4-3
