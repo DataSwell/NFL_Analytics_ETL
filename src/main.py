@@ -106,5 +106,5 @@ db = MyDatabase()
 # for i, row in teams.iterrows():
 #     db.query_func(teams_table_insert, list(row))
 
-for i, row in scores_bets.iterrows():
-    db.query_func(scores_bets_table_insert, list(row))
+# for i, row in scores_bets.iterrows():
+#     db.query_func(scores_bets_table_insert, list(row))
