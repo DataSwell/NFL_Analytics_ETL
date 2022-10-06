@@ -25,6 +25,9 @@ Deployment with Docker
 ## Particularities
 The sportsdata.io API 
 
+## Hints
+data folder is excluded/ignored from git, because the updting and archiving creates a lot of changed files. 
+Therefore the data on GitHub can be old or not coomplete.
 
 ## Update intervalls
 The data will be updated weekly during the Football season. Because the last game of a Gameweek is on monday, the updates will occur on thursday.
