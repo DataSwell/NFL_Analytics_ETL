@@ -79,5 +79,5 @@ insert_scores = """INSERT INTO sd_scores (
     VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
 """
 
-# for i, row in df_scores.iterrows():
-#     db.query_func(insert_scores, list(row))
+for i, row in df_scores.iterrows():
+    db.query_func(insert_scores, list(row))
