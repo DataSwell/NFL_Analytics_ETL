@@ -62,7 +62,7 @@ db.query_func(create_KG_scores_bets_table)
 
 # Cretaing the tables for the content of the SportsData-API
 
-create_SD_stadiums_table = """CREATE TABLE IF NOT EXISTS sd_stadiums 
+create_SD_stadiums = """CREATE TABLE IF NOT EXISTS sd_stadiums 
     (stadiumID int PRIMARY KEY,
     stadium_name varchar NOT NULL, 
     stadium_city varchar, 
@@ -73,7 +73,7 @@ create_SD_stadiums_table = """CREATE TABLE IF NOT EXISTS sd_stadiums
     stadium_type varchar)
 """
 
-create_SD_teams_table = """CREATE TABLE IF NOT EXISTS sd_teams 
+create_SD_teams = """CREATE TABLE IF NOT EXISTS sd_teams 
     (team_short varchar,
     teamID int PRIMARY KEY,
     city varchar NOT NULL, 
@@ -119,14 +119,67 @@ create_SD_standings = """CREATE TABLE IF NOT EXISTS sd_standings (
     PRIMARY KEY (season_type, season, teamID, week))
 """
 
-create_SD_team_stats = """
+create_SD_scores = """CREATE TABLE IF NOT EXISTS sd_scores (
+    game_key varchar PRIMARY KEY,
+    season_type integer,
+    season integer,
+    week integer,
+    date date,
+    away_team varchar,
+    home_team varchar,
+    away_score integer,
+    home_score integer,
+    point_spread decimal,
+    over_under decimal,
+    stadiumID integer,
+    day date,
+    away_teamID integer,
+    home_teamID integer,
+    scoreID integer,
+    status varchar,
+    UNIQUE (scoreID),
+    foreign key (away_teamID) references sd_teams (teamID),
+    foreign key (home_teamID) references sd_teams (teamID))
+"""
+
+create_SD_team_stats = """CREATE TABLE IF NOT EXISTS sd_team_stats (
+    season_type integer,
+    season integer,
+    team varchar,
+    score integer,
+    opponent_score integer,
+    total_score integer,
+    score_q1 integer,
+    score_q2 integer,
+    score_q3 integer,
+    score_q4 integer,
+    score_overtime integer,
+    time_of_possession varchar,
+    opponent_score_q1 integer,
+    opponent_score_q2 integer,
+    opponent_score_q3 integer,
+    opponent_score_q4 integer,
+    opponent_score_Overtime integer,
+    opponent_time_of_possession varchar,
+    times_sacked_percentage decimal,
+    team_name varchar,
+    games integer,
+    team_seasonID integer,
+    teamID integer,
+    team_statID integer PRIMARY KEY,
+    foreign key (teamID) references sd_teams (teamID))
 """
 
 create_SD_player_season_by_team = """
 """
 
+create_SD_injuries = """
+"""
 
-db.query_func(create_SD_stadiums_table)
-db.query_func(create_SD_teams_table)
+
+db.query_func(create_SD_stadiums)
+db.query_func(create_SD_teams)
 db.query_func(create_SD_standings)
+db.query_func(create_SD_scores)
+db.query_func(create_SD_team_stats)
 db.close()
