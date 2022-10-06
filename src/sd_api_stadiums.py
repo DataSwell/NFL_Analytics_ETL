@@ -46,5 +46,5 @@ stadium_type)
 VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
 """
 
-# for i, row in df_stadiums.iterrows():
-#     db.query_func(insert_stadiums_string, list(row))
+for i, row in df_stadiums.iterrows():
+    db.query_func(insert_stadiums_string, list(row))
