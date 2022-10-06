@@ -65,5 +65,5 @@ defensive_schema)
 VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s,%s)
 """)
 
-# for i, row in df_teams.iterrows():
-#     db.query_func(insert_teams_string, list(row))
+for i, row in df_teams.iterrows():
+    db.query_func(insert_teams_string, list(row))
