@@ -1,7 +1,9 @@
+import datetime
 import requests
 import os
 import pandas as pd
 from database_config import MyDatabase
+from my_funcs import gameweek, season
 
 # getting the API-Key which is stored in the environment variables 
 api_key = os.environ.get('SD_API_Key')
@@ -52,8 +54,9 @@ df_team_season_stats = df_team_season_stats.filter(items=[
 print(df_team_season_stats.head())
 print(df_team_season_stats.tail())
 
-df_team_season_stats.to_csv('Projekte/Football_Analytics/data/SD_team_season_stats.csv', index=False)
-df_team_season_stats.to_excel('Projekte/Football_Analytics/data/SD_team_season_stats.xlsx', index=False)
+
+df_team_season_stats.to_csv(f'Projekte/Football_Analytics/data/SD_team_season_stats_{season()}_{gameweek()}.csv', index=False)
+df_team_season_stats.to_excel(f'Projekte/Football_Analytics/data/SD_team_season_stats_{season()}_{gameweek()}.xlsx', index=False)
 
 # fresh data must replace the data from the last week for the currant season
 
@@ -89,5 +92,5 @@ insert_team_stats = """INSERT INTO sd_team_stats (
     %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
 """
 
-for i, row in df_team_season_stats.iterrows():
-    db.query_func(insert_team_stats, list(row))
+# for i, row in df_team_season_stats.iterrows():
+#     db.query_func(insert_team_stats, list(row))
