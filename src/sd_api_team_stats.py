@@ -92,5 +92,5 @@ insert_team_stats = """INSERT INTO sd_team_stats (
     %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
 """
 
-# for i, row in df_team_season_stats.iterrows():
-#     db.query_func(insert_team_stats, list(row))
+for i, row in df_team_season_stats.iterrows():
+    db.query_func(insert_team_stats, list(row))
