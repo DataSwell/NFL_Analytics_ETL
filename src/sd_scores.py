@@ -1,7 +1,9 @@
+import datetime
 import requests
 import os
 import pandas as pd
 from database_config import MyDatabase
+from my_funcs import gameweek, season
 
 # getting the API-Key which is stored in the environment variables 
 api_key = os.environ.get('SD_API_Key')
@@ -46,9 +48,8 @@ df_scores = df_scores.fillna(0)
 print(df_scores.head())
 print(df_scores.tail())
 
-df_scores.to_csv('Projekte/Football_Analytics/data/SD_scores.csv', index=False)
-df_scores.to_excel('Projekte/Football_Analytics/data/SD_scores.xlsx', index=False)
-
+df_scores.to_csv(f'Projekte/Football_Analytics/data/SD_scores_{season()}_{gameweek()}.csv', index=False)
+df_scores.to_excel(f'Projekte/Football_Analytics/data/SD_scores_{season()}_{gameweek()}.xlsx', index=False)
 
 
 # Loading into Database
@@ -78,5 +79,5 @@ insert_scores = """INSERT INTO sd_scores (
     VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
 """
 
-for i, row in df_scores.iterrows():
-    db.query_func(insert_scores, list(row))
+# for i, row in df_scores.iterrows():
+#     db.query_func(insert_scores, list(row))
