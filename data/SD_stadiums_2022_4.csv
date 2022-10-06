@@ -1,0 +1,51 @@
+StadiumID,Name,City,State,Country,Capacity,PlayingSurface,Type
+1,Highmark Stadium,Orchard Park,NY,USA,71608,Artificial,Outdoor
+2,Hard Rock Stadium,Miami Gardens,FL,USA,64767,Grass,Outdoor
+3,MetLife Stadium,East Rutherford,NJ,USA,82500,Artificial,Outdoor
+4,Gillette Stadium,Foxborough,MA,USA,65878,Artificial,Outdoor
+5,Paycor Stadium,Cincinnati,OH,USA,65515,Artificial,Outdoor
+6,FirstEnergy Stadium,Cleveland,OH,USA,67431,Grass,Outdoor
+7,M&T Bank Stadium,Baltimore,MD,USA,71008,Grass,Outdoor
+8,Acrisure Stadium,Pittsburgh,PA,USA,68400,Grass,Outdoor
+9,Lucas Oil Stadium,Indianapolis,IN,USA,67000,Artificial,RetractableDome
+10,TIAA Bank Field,Jacksonville,FL,USA,69132,Grass,Outdoor
+11,NRG Stadium,Houston,TX,USA,72220,Artificial,RetractableDome
+12,Nissan Stadium,Nashville,TN,USA,69143,Grass,Outdoor
+13,Empower Field at Mile High,Denver,CO,USA,76125,Grass,Outdoor
+14,Qualcomm Stadium,San Diego,CA,USA,70561,Grass,Outdoor
+15,Arrowhead Stadium,Kansas City,MO,USA,76416,Grass,Outdoor
+16,RingCentral Coliseum ,Oakland,CA,USA,53200,Grass,Outdoor
+17,AT&T Stadium,Arlington,TX,USA,80000,Artificial,RetractableDome
+18,Lincoln Financial Field,Philadelphia,PA,USA,69796,Grass,Outdoor
+19,FedEx Field,Landover,MD,USA,82000,Grass,Outdoor
+20,Soldier Field,Chicago,IL,USA,61500,Grass,Outdoor
+21,Ford Field,Detroit,MI,USA,65000,Artificial,Dome
+22,Lambeau Field,Green Bay,WI,USA,81441,Grass,Outdoor
+23,Mall of America Field,Minneapolis,MN,US,64111,Dome,Dome
+24,Raymond James Stadium,Tampa Bay,FL,USA,65618,Grass,Outdoor
+25,Georgia Dome,Atlanta,GA,USA,74228,Dome,Dome
+26,Bank of America Stadium,Charlotte,NC,USA,74867,Artificial,Outdoor
+27,Caesars Superdome,New Orleans,LA,USA,73208,Artificial,Dome
+28,Candlestick Park,San Francisco,CA,US,70207,Grass,Outdoor
+29,State Farm Stadium,Glendale,AZ,USA,63400,Grass,RetractableDome
+30,Edward Jones Dome,St. Louis,MO,USA,66000,Dome,Dome
+31,Lumen Field,Seattle,WA,USA,68740,Artificial,Outdoor
+33,Wembley Stadium,London,,UK,86000,Grass,Retractable_dome
+34,Rogers Centre,Toronto,,CA,86000,Dome,Retractable_dome
+35,Fawcett Stadium,Canton,OH,USA,22375,Artificial,Outdoor
+36,Huntington Bank Stadium,Minneapolis,MN,USA,50805,Artificial,Outdoor
+37,Levi's Stadium,Santa Clara,CA,USA,68500,Grass,Outdoor
+38,Los Angeles Memorial Coliseum,Los Angeles,CA,USA,93607,Grass,Outdoor
+39,Camping World Stadium,Orlando,FL,USA,65000,Artificial,Outdoor
+40,Twickenham Stadium,London,,UK,82000,Grass,Outdoor
+41,Estadio Azteca,Mexico City,,Mexico,87000,Grass,Outdoor
+42,U.S. Bank Stadium,Minneapolis,MN,USA,66655,Artificial,Dome
+43,Dignity Health Sports Park,Carson,CA,USA,27000,Grass,Outdoor
+45,Mercedes-Benz Stadium,Atlanta,GA,USA,71000,Artificial,RetractableDome
+46,Tom Benson Hall of Fame Stadium,Canton,OH,USA,23000,Artificial,Outdoor
+47,Tottenham Hotspur Stadium,London,,UK,62062,,Outdoor
+48,Aloha Stadium,Honolulu,HI,USA,50000,Artificial,Outdoor
+50,Investors Group Field,Winnipeg,,CA,33134,Artificial,Outdoor
+53,Allegiant Stadium,Las Vegas,NV,USA,65000,Grass,Dome
+54,SoFi Stadium,Inglewood,CA,USA,70240,Artificial,Dome
+55,Allianz Arena,Munich,,Germany,75024,Grass,Outdoor
