@@ -65,5 +65,5 @@ insert_standings_string = """INSERT INTO sd_standings (
     %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
 """
 
-# for i, row in df_standings.iterrows():
-#     db.query_func(insert_standings_string, list(row))
+for i, row in df_standings.iterrows():
+    db.query_func(insert_standings_string, list(row))
