@@ -14,9 +14,7 @@ csv_files = [
     f'SD_standings_{season()}_{last_gameweek()}.csv',
     f'SD_team_season_stats_{season()}_{last_gameweek()}.csv',
     f'SD_teams_{season()}_{last_gameweek()}.csv',
-    'scores_bets.csv',
-    'stadiums.csv',
-    'teams.csv'
+    'spreadspoke_scores.csv',
 ]
 
 xlsx_files = [
