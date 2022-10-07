@@ -1,5 +1,4 @@
 # NFL_Analytics
-
 For this NFL project different types of data are collected. From Kaggle the "NFL scores and betting" dataset, which
 include the historic game scores und betting odds since 1966, also the team and staium information.
 
@@ -19,23 +18,26 @@ Upcoming:
 - Injuries
 - Player Season Stats by Teams
 Not possible:
- - Player Season STats details, because  there are to much player for the amount of API calls per month with the free version.
+ - Player Season Stats details, because  there are to much player for the amount of API calls per month with the free version.
+
 
 ## Used Tools
-Python Scripts for extracting, transforming and loading the data
-The data is stored in a Postgres database
-Job Orchestration with Airflow
-Deployment with Docker
+Python Scripts for extracting, transforming and loading the data. The download of the kaggle dataset is automized with a websraper based on selenium, because it is a dynamic page (login).
+For now the data is stored in a relational Postgres database.
+Job Orchestration will be done by Airflow.
 
-## Particularities
-The sportsdata.io API 
 
-## Hints
+## Particularities / Hints
 data folder is excluded/ignored from git, because the updting and archiving creates a lot of changed files. 
 Therefore the data on GitHub can be old or not coomplete.
 
-## Update intervalls
-The data will be updated weekly during the Football season. Because the last game of a Gameweek is on monday, the updates will occur on thursday.
+
+## Update intervalls and scheduling
+The data will be updated weekly during the Football season. Because the last game of a Gameweek is on monday, the updates will occur on tuesday.
+Airflow Schedule:
+1. archiving.py -> moves the files from last week in the archiv folder
+2. 5 files for the data from the SportsData.io API (scores, stadiums, standings, team_stats, teams)
+3. kaggle extract and upload
 
 
 ## Datamodel and Data Dictionary
