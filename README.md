@@ -28,7 +28,7 @@ Job Orchestration will be done by Airflow.
 
 
 ## Particularities / Hints
-data folder is excluded/ignored from git, because the updting and archiving creates a lot of changed files. 
+Data folder is excluded/ignored from git, because the updting and archiving creates a lot of changed files. 
 Therefore the data on GitHub can be old or not coomplete.
 
 
@@ -41,7 +41,14 @@ Airflow Schedule:
 
 
 ## Datamodel and Data Dictionary
-upcoming...
+
+Normally we want the columns season and week as integer, so we can use SQL operator like between/lower/higher. 
+In the table kg_scores_bets the data of the column week is mixed with numbers for the regular season games and also with chars for the different kind of playoff games (Division, Superbowl).
+The data for the season, the week and the type of season (pre, regular, pre) of the table sd_scores are all integers. Therefor we can use SQL operators for the data from SportsData.
+to equal the schmeas and make the data comparable, a transformation of the kaggle dataset is required:
+- We have to add a column season_type
+- for every row with a number in the column week we write a 1 in season_type. For every row with chars we write a 2 in season_type.
+- 
 
 
 ## switching to Cloud
