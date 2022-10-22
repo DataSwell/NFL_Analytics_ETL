@@ -3,3 +3,4 @@ creds.py
 # ignore theses folders
 archiv
 data
+logs
