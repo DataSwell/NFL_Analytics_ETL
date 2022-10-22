@@ -1,7 +1,7 @@
 import pandas as pd
 from database_config import MyDatabase
 
-df_scores_bets = pd.read_csv('Projekte/Football_Analytics/data/spreadspoke_scores.csv')
+df_scores_bets = pd.read_csv(r'D:/Projekte/Football_Analytics/data/spreadspoke_scores.csv')
 
 # changing the dateformat from dd/mm/yyyy to yyyy-mm-dd for postgres insert
 df_scores_bets['schedule_date'] = pd.to_datetime(df_scores_bets['schedule_date'])
