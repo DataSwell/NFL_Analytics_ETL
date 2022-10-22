@@ -1,7 +1,6 @@
 import requests
 import os
 import pandas as pd
-import datetime
 from database_config import MyDatabase
 from my_funcs import gameweek, season
 
@@ -30,8 +29,8 @@ df_standings['week'] = gameweek()
 print(df_standings.head())
 print(df_standings.tail())
 
-df_standings.to_csv(f'Projekte/Football_Analytics/data/SD_standings_{season()}_{gameweek()}.csv', index=False)
-df_standings.to_excel(f'Projekte/Football_Analytics/data/SD_standings_{season()}_{gameweek()}.xlsx', index=False)
+df_standings.to_csv(f'Football_Analytics/data/SD_standings_{season()}_{gameweek()}.csv', index=False)
+df_standings.to_excel(f'Football_Analytics/data/SD_standings_{season()}_{gameweek()}.xlsx', index=False)
 
 # Loading into Postgres
 db = MyDatabase()
