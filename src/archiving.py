@@ -10,19 +10,15 @@ dst_folder_xlsx = 'D:/Projekte/Football_Analytics/data/archiv/xlsx/'
 # files to move
 csv_files = [
     f'SD_scores_{season()}_{last_gameweek()}.csv',
-    f'SD_stadiums_{season()}_{last_gameweek()}.csv',
     f'SD_standings_{season()}_{last_gameweek()}.csv',
     f'SD_team_season_stats_{season()}_{last_gameweek()}.csv',
-    f'SD_teams_{season()}_{last_gameweek()}.csv',
-    'spreadspoke_scores.csv',
+    'spreadspoke_scores.csv'
 ]
 
 xlsx_files = [
     f'SD_scores_{season()}_{last_gameweek()}.xlsx',
-    f'SD_stadiums_{season()}_{last_gameweek()}.xlsx',
     f'SD_standings_{season()}_{last_gameweek()}.xlsx',
-    f'SD_team_season_stats_{season()}_{last_gameweek()}.xlsx',
-    f'SD_teams_{season()}_{last_gameweek()}.xlsx'
+    f'SD_team_season_stats_{season()}_{last_gameweek()}.xlsx'
 ]
 
 
