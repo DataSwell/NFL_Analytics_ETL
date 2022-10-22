@@ -33,7 +33,7 @@ create_KG_teams_table = """CREATE TABLE IF NOT EXISTS kg_teams
 
 create_KG_scores_bets_table = """CREATE TABLE IF NOT EXISTS kg_scores_bets 
     (schedule_date date, 
-    schedule_season varchar, 
+    schedule_season int, 
     schedule_week varchar, 
     schedule_playoff bool, 
     team_home varchar, 
@@ -166,8 +166,9 @@ create_SD_team_stats = """CREATE TABLE IF NOT EXISTS sd_team_stats (
     games integer,
     team_seasonID integer,
     teamID integer,
-    team_statID integer PRIMARY KEY,
-    foreign key (teamID) references sd_teams (teamID))
+    team_statID integer,
+    foreign key (teamID) references sd_teams (teamID),
+    PRIMARY KEY (season_type, season, teamID, games))
 """
 
 create_SD_player_season_by_team = """
