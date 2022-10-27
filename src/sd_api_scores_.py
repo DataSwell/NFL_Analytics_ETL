@@ -52,8 +52,8 @@ print(df_scores.tail())
 # LOADING
 
 # saving local files
-df_scores.to_csv(f'Football_Analytics/data/SD_scores_{season()}_{gameweek()}.csv', index=False)
-df_scores.to_excel(f'Football_Analytics/data/SD_scores_{season()}_{gameweek()}.xlsx', index=False)
+df_scores.to_csv(f'D:/Projekte/Football_Analytics/data/SD_scores_{season()}_{gameweek()}.csv', index=False)
+df_scores.to_excel(f'D:/Projekte/Football_Analytics/data/SD_scores_{season()}_{gameweek()}.xlsx', index=False)
 
 # Loading into Database
 db = MyDatabase()
