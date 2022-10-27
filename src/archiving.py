@@ -29,6 +29,7 @@ for file in csv_files:
     # move file
     try:
         shutil.move(source, destination)
+        print('CSV files moved to archiv')
     except shutil.Error as err:
         print(err)
 
@@ -40,5 +41,6 @@ for file in xlsx_files:
     # move file
     try:
         shutil.move(source, destination)
+        print('Excel files moved to archiv')
     except shutil.Error as err:
         print(err)
