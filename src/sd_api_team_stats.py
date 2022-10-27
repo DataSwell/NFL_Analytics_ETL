@@ -54,8 +54,8 @@ print(df_team_season_stats.head())
 print(df_team_season_stats.tail())
 
 
-df_team_season_stats.to_csv(f'Football_Analytics/data/SD_team_season_stats_{season()}_{gameweek()}.csv', index=False)
-df_team_season_stats.to_excel(f'Football_Analytics/data/SD_team_season_stats_{season()}_{gameweek()}.xlsx', index=False)
+df_team_season_stats.to_csv(f'D:/Projekte/Football_Analytics/data/SD_team_season_stats_{season()}_{gameweek()}.csv', index=False)
+df_team_season_stats.to_excel(f'D:/Projekte/Football_Analytics/data/SD_team_season_stats_{season()}_{gameweek()}.xlsx', index=False)
 
 # Primary key is a combination of season_type, season, teamID and games.
 # with this combination everytime a new row can be inserted if the team played a Game in the last week.
