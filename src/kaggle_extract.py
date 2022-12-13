@@ -35,9 +35,9 @@ dwl_btn_xpath = '//*[@id="site-content"]/div[2]/div[2]/div/div[1]/div/a/button'
                 
 driver.get(spread_scores_url)
 print('changed to spread_scores URL')
-WebDriverWait(driver, 10).until(expected_conditions.presence_of_element_located((By.XPATH, dwl_btn_xpath)))
+WebDriverWait(driver, 10).until(expected_conditions.presence_of_element_located((By.XPATH, '//*[@id="site-content"]/div/div/div[2]/div[1]/div/a/button')))
 print('Button located')
-driver.find_element(By.XPATH, dwl_btn_xpath).click()
+driver.find_element(By.XPATH, '//*[@id="site-content"]/div/div/div[2]/div[1]/div/a/button').click()
 print('Download successful')
 
 time.sleep(10)
