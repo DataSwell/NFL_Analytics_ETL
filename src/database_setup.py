@@ -171,10 +171,129 @@ create_SD_team_stats = """CREATE TABLE IF NOT EXISTS sd_team_stats (
     PRIMARY KEY (season_type, season, teamID, games))
 """
 
-create_SD_player_season_by_team = """
+create_ncaa_stadiums = """CREATE TABLE IF NOT EXISTS ncaa_stadiums 
+    (stadiumID int PRIMARY KEY,
+    stadium_active boolean,
+    stadium_name varchar NOT NULL, 
+    stadium_dome boolean,
+    stadium_city varchar, 
+    stadium_state varchar)
 """
 
-create_SD_injuries = """
+create_ncaa_teams = """CREATE TABLE IF NOT EXISTS ncaa_teams 
+(teamID integer PRIMARY KEY,
+team_short varchar,
+active boolean,
+school varchar,
+name varchar, 
+stadiumID integer,
+ap_rank integer,
+wins integer,
+losses integer,
+conference_wins integer,
+conference_losses integer,
+global_teamID integer,
+coaches_rank integer,
+playoff_rank integer,
+conferenceID integer,
+conference varchar, 
+short_display_name varchar)
+"""
+
+create_ncaa_teams_season = """CREATE TABLE IF NOT EXISTS ncaa_teams_season 
+(statID integer,
+teamID integer, 
+Season_type integer,
+season integer,
+name varchar,
+team varchar,
+wins integer,
+losses integer,
+points_for integer,
+points_against integer,
+Conference_Wins integer,
+Conference_Losses integer,
+Conference_Points_For integer,
+Conference_Points_Against integer,
+Home_Wins integer,
+Home_Losses integer,
+Road_Wins integer,
+Road_Losses integer,
+Streak integer,
+Score integer,
+Opponent_Score integer,
+First_Downs integer,
+Third_Down_Conversions integer,
+Third_Down_Attempts integer,
+Fourth_Down_Conversions integer,
+Fourth_Down_Attempts integer,
+Penalties integer,
+Penalty_Yards integer,
+Time_Of_Possession_Minutes integer,
+Time_Of_Possession_Seconds integer,
+Global_TeamID integer,
+Conference_Rank integer,
+Division_Rank integer,
+Games integer,
+Passing_Attempts decimal,
+Passing_Completions decimal,
+Passing_Yards decimal,
+Passing_Completion_Percentage decimal,
+Passing_Yards_Per_Attempt decimal,
+Passing_Yards_Per_Completion decimal,
+Passing_Touchdowns decimal,
+Passing_Interceptions decimal,
+Passing_Rating decimal,
+Rushing_Attempts decimal,
+Rushing_Yards decimal,
+Rushing_Yards_Per_Attempt decimal,
+Rushing_Touchdowns decimal,
+Rushing_Long decimal,
+Receptions decimal,
+Receiving_Yards decimal,
+Receiving_Yards_Per_Reception decimal,
+Receiving_Touchdowns decimal,
+Receiving_Long decimal,
+FieldGoals_Attempted decimal,
+FieldGoals_Made decimal,
+FieldGoal_Percentage	decimal,
+FieldGoals_Longest_Made decimal,
+ExtraPoints_Attempted decimal,
+ExtraPoints_Made decimal,
+Interceptions decimal,
+Interception_Return_Yards decimal,
+Interception_Return_Touchdowns decimal,
+Solo_Tackles decimal,
+Assisted_Tackles decimal,
+Tackles_For_Loss decimal,
+Sacks decimal,
+Passes_Defended decimal,
+Fumbles_Recovered decimal,
+Fumble_Return_Touchdowns decimal,
+Quarterback_Hurries decimal,
+Fumbles decimal,
+Fumbles_Lost decimal)
+"""
+
+create_ncaa_games = """CREATE TABLE IF NOT EXISTS ncaa_games 
+(gameID integer PRIMARY KEY,
+season integer,
+season_type integer,
+week integer,
+status varchar,
+day	date,
+away_team varchar,
+home_team varchar,
+away_teamID integer,
+home_teamID integer,
+away_team_name varchar,
+home_team_name varchar,
+away_team_score integer,
+home_team_score integer,
+point_spread decimal,
+over_under decimal,
+stadiumID integer,
+title varchar)
 """
 
 
@@ -183,4 +302,8 @@ db.query_func(create_SD_teams)
 db.query_func(create_SD_standings)
 db.query_func(create_SD_scores)
 db.query_func(create_SD_team_stats)
+db.query_func(create_ncaa_stadiums)
+db.query_func(create_ncaa_teams)
+db.query_func(create_ncaa_teams_season)
+db.query_func(create_ncaa_games)
 db.close()
