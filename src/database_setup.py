@@ -182,7 +182,6 @@ create_ncaa_stadiums = """CREATE TABLE IF NOT EXISTS ncaa_stadiums
 
 create_ncaa_teams = """CREATE TABLE IF NOT EXISTS ncaa_teams 
 (teamID integer PRIMARY KEY,
-team_short varchar,
 active boolean,
 school varchar,
 name varchar, 
