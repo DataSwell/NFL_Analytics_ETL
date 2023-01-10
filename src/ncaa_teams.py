@@ -22,7 +22,6 @@ print(df_teams)
 # Transform the dataframe
 df_teams = df_teams.filter(items=[
     'TeamID',
-    'team_short',
     'Active',
     'School',
     'Name',
@@ -54,7 +53,6 @@ db = MyDatabase()
 
 insert_ncaa_teams = """INSERT INTO ncaa_teams (
 teamID,
-team_short,
 active,
 school,
 name, 
@@ -68,9 +66,9 @@ global_teamID,
 coaches_rank,
 playoff_rank,
 conferenceID,
-conferencer, 
+conference, 
 short_display_name)  
-VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
 """
 
 for i, row in df_teams.iterrows():
