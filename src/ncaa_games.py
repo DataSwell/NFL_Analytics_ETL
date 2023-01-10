@@ -13,56 +13,56 @@ df_cfb_games_total = pd.DataFrame()
 
 
 # EXTRACT
-cfb_seasons = [2021, 2022, 2023]
-cfb_weeks = list(range(1,22))
+cfb_season = 2021
+cfb_weeks = list(range(1,18))
 
-for season in cfb_seasons:
-    for week in cfb_weeks:
 
-        url = f"https://api.sportsdata.io/v3/cfb/scores/json/GamesByWeek/{season}/{week}"
-        response = requests.request("GET", url, headers=headers, data=payload)
-        res_json = response.json()
-        print(res_json)
-        
-        try:
-            df_cfb_games = pd.DataFrame(res_json)
-            print(df_cfb_games)
+for week in cfb_weeks:
 
-            # TRANSFORM
-            df_cfb_games = df_cfb_games.filter(items=[
-            'GameID',
-            'Season',
-            'SeasonType',
-            'Week',
-            'Status',
-            'Day',
-            'AwayTeam',
-            'HomeTeam',
-            'AwayTeamID',
-            'HomeTeamID',
-            'AwayTeamName',
-            'HomeTeamName',
-            'AwayTeamScore',
-            'HomeTeamScore',
-            'PointSpread',
-            'OverUnder',
-            'StadiumID',
-            'Title'
-            ])
+    url = f"https://api.sportsdata.io/v3/cfb/scores/json/GamesByWeek/{cfb_season}/{week}"
+    response = requests.request("GET", url, headers=headers, data=payload)
+    res_json = response.json()
+    print(res_json)
+    
+    try:
+        df_cfb_games = pd.DataFrame(res_json)
+        print(df_cfb_games)
 
-            # concat the extract dataframe to the global Dataframe
-            df_cfb_games_total = pd.concat([df_cfb_games_total, df_cfb_games], axis=0, ignore_index=True) 
+        # TRANSFORM
+        df_cfb_games = df_cfb_games.filter(items=[
+        'GameID',
+        'Season',
+        'SeasonType',
+        'Week',
+        'Status',
+        'Day',
+        'AwayTeam',
+        'HomeTeam',
+        'AwayTeamID',
+        'HomeTeamID',
+        'AwayTeamName',
+        'HomeTeamName',
+        'AwayTeamScore',
+        'HomeTeamScore',
+        'PointSpread',
+        'OverUnder',
+        'StadiumID',
+        'Title'
+        ])
 
-        except:
-            print(f'No games in {week}')
+        # concat the extract dataframe to the global Dataframe
+        df_cfb_games_total = pd.concat([df_cfb_games_total, df_cfb_games], axis=0, ignore_index=True) 
 
-        time.sleep(5)
+    except:
+        print(f'No games in {week}')
+
+    time.sleep(3)
 
 
 # LOAD
 # Save the data local as a CSV file
-df_cfb_games_total.to_csv(f'Projekte/Football_Analytics/data/NCAA_games.csv', index=False)
-df_cfb_games_total.to_excel(f'Projekte/Football_Analytics/data/NCAA_games.xlsx', index=False)
+df_cfb_games_total.to_csv(f'Projekte/Football_Analytics/data/NCAA_games_{cfb_season}.csv', index=False)
+df_cfb_games_total.to_excel(f'Projekte/Football_Analytics/data/NCAA_games{cfb_season}.xlsx', index=False)
 
 # Loading the data in the Database
 db = MyDatabase()
