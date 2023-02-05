@@ -13,8 +13,8 @@ df_cfb_games_total = pd.DataFrame()
 
 
 # EXTRACT
-cfb_season = 2021
-cfb_weeks = list(range(1,18))
+cfb_season = 2023
+cfb_weeks = list(range(1, 5))
 
 
 for week in cfb_weeks:
@@ -56,7 +56,7 @@ for week in cfb_weeks:
     except:
         print(f'No games in {week}')
 
-    time.sleep(3)
+    time.sleep(10)
 
 
 # LOAD
