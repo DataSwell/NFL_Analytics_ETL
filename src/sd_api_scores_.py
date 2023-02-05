@@ -8,7 +8,7 @@ from my_funcs import gameweek, season
 # getting the API-Key which is stored in the environment variables 
 api_key = os.environ.get('SD_API_Key')
 
-url = "https://api.sportsdata.io/v3/nfl/scores/json/Scores/{2022REG}"
+url = "https://api.sportsdata.io/v3/nfl/scores/json/Scores/{2022POST}"
 
 payload={}
 headers = {
