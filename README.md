@@ -53,3 +53,25 @@ to equal the schmeas and make the data comparable, a transformation of the kaggl
 
 ## switching to Cloud
 upcomin ....
+
+
+## dbt Structure
+1. sources
+   - kaggle
+     - kg_scores
+   - sd_nfl
+     - nfl_games
+     - nfl_standings
+     - nfl_teams_stats
+     - nfl_stadiums
+     - nfl_teams
+   - sd_ncaaf
+     - ncaaf_games
+     - ncaaf_teams_stats
+     - ncaaf_stadiums
+     - ncaaf_teams
+2. staging
+3. marts
+   - nfl
+   - ncaaf
+
