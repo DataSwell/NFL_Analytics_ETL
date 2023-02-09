@@ -295,6 +295,25 @@ stadiumID integer,
 title varchar)
 """
 
+create_dim_date = """CREATE TABLE IF NOT EXISTS dim_date
+(date_num integer PRIMARY KEY,
+date date,
+year_month integer,
+quartal varchar(10),
+month_num integer,
+month_name varchar(20),
+month_short varchar(5),
+week_num integer,
+day_num_year integer,
+day_num_month integer,
+day_num_week integer,
+day_name varchar(20),
+day_short varchar(5),
+quarter_num integer,
+year_quarter integer,
+day_num_quarter integer)
+"""
+
 
 db.query_func(create_SD_stadiums)
 db.query_func(create_SD_teams)
@@ -305,4 +324,5 @@ db.query_func(create_ncaa_stadiums)
 db.query_func(create_ncaa_teams)
 db.query_func(create_ncaa_teams_season)
 db.query_func(create_ncaa_games)
+db.query_func(create_dim_date)
 db.close()
