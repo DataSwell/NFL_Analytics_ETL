@@ -314,6 +314,13 @@ year_quarter integer,
 day_num_quarter integer)
 """
 
+create_dim_states = """CREATE TABLE IF NOT EXISTS dim_regions
+(state_id varchar(2) PRIMARY KEY,
+state_name varchar(50),
+capital varchar(50),
+region varchar(20))
+"""
+
 
 db.query_func(create_SD_stadiums)
 db.query_func(create_SD_teams)
@@ -325,4 +332,5 @@ db.query_func(create_ncaa_teams)
 db.query_func(create_ncaa_teams_season)
 db.query_func(create_ncaa_games)
 db.query_func(create_dim_date)
+db.query_func(create_dim_states)
 db.close()
