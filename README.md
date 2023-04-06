@@ -14,17 +14,10 @@ Also the API provides additional informtaion like:
 - Standings 
 - Team Season Stats (scores, scores by quarters, also for the opponents)
 - Team details (Coaches, Offensive- & Defensive Scheme)
-Upcoming:
-- Injuries
-- Player Season Stats by Teams
-Not possible:
- - Player Season Stats details, because  there are to much player for the amount of API calls per month with the free version.
 
 
 ## Used Tools
-Python Scripts for extracting, transforming and loading the data. The download of the kaggle dataset is automized with a websraper based on selenium, because it is a dynamic page (login).
-For now the data is stored in a relational Postgres database.
-Job Orchestration will be done by Airflow.
+Python Scripts for extracting, transforming and loading the data. The download of the kaggle dataset is automized with a websraper based on selenium, because it is a dynamic page (login). For now the data is stored in a relational Postgres database. 
 
 
 ## Particularities / Hints
@@ -45,33 +38,6 @@ Airflow Schedule:
 Normally we want the columns season and week as integer, so we can use SQL operator like between/lower/higher. 
 In the table kg_scores_bets the data of the column week is mixed with numbers for the regular season games and also with chars for the different kind of playoff games (Division, Superbowl).
 The data for the season, the week and the type of season (pre, regular, pre) of the table sd_scores are all integers. Therefor we can use SQL operators for the data from SportsData.
-to equal the schmeas and make the data comparable, a transformation of the kaggle dataset is required:
-- We have to add a column season_type
-- for every row with a number in the column week we write a 1 in season_type. For every row with chars we write a 2 in season_type.
-- 
+To equal the schmeas and make the data comparable, a transformation of the kaggle dataset is required. This will happen in different data warehouse layers with SQL scripts run by dbt. There is a different project for the data warehousing part:
 
-
-## switching to Cloud
-upcomin ....
-
-
-## dbt Structure
-1. sources
-   - kaggle
-     - kg_scores
-   - sd_nfl
-     - nfl_games
-     - nfl_standings
-     - nfl_teams_stats
-     - nfl_stadiums
-     - nfl_teams
-   - sd_ncaaf
-     - ncaaf_games
-     - ncaaf_teams_stats
-     - ncaaf_stadiums
-     - ncaaf_teams
-2. staging
-3. marts
-   - nfl
-   - ncaaf
-
+https://github.com/DataSwell/football_analytics_dbt
