@@ -9,7 +9,7 @@ which means, that the data like scores are not the exact results. We want compar
 The free API provides 1,000 API calls per month. In the data dictionary is listed, which data is scrambled.
 
 Also the API provides additional informtaion like:
-- Scores_bets (scrambled, but can be compared to the data from kaggle, only playoffs scrambled?)
+- Games (scrambled, but can be compared to the data from kaggle, only playoffs scrambled?)
 - Stadiums
 - Standings 
 - Team Season Stats (scores, scores by quarters, also for the opponents)
